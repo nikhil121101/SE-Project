@@ -1,0 +1,36 @@
+{
+  "name": "greenBay",
+  "version": "1.0.0",
+  "description": "eBay clone as my final Green Fox Project",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server",
+    "server": "nodemon backend/server",
+    "client": "npm start --prefix frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node backend/seeder",
+    "data:destroy": "node backend/seeder -d",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+  },
+  "author": "IIITG 2019",
+  "license": "MIT",
+  "dependencies": {
+    "awilix": "^4.3.4",
+    "bcryptjs": "^2.4.3",
+    "colors": "^1.4.0",
+    "debug": "^4.3.4",
+    "dotenv": "^8.6.0",
+    "express": "^4.17.3",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.13.14",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4",
+    "prettier": "^2.6.1"
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0",
+    "nodemon": "^2.0.4"
+  }
+}
